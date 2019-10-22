@@ -14,5 +14,6 @@ All deployments proceed as follows:
 
 * The configset (`tul_cob-az-$TAG`) is pushed to the SolrCloud instance.
 * Then, a new empty collection with the same name will be pushed up.
-* Finally an alias will be created using the end of the tag that ends in `-[a-z0-9]+` as a suffix.
+* Creates an alias based on the configset (ex. `tul_cob-az-v1-qa`).
+* Creates a generic alias using the end of the tag that ends in `-[a-z0-9]+` as a suffix.
   * But only if it doesn't already exist.
