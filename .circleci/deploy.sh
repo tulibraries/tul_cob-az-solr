@@ -37,6 +37,8 @@ echo
 echo "***"
 echo "* Creating prod alias based on configset name."
 echo "***"
+RELEASE_ID=$(curl "https://api.github.com/repos/tulibraries/tul_cob-az-solr/releases/latest" | jq .id)
+
 RESP=$(curl -u $SOLR_USER:$SOLR_PASSWORD -i -o - --silent -X POST --header "Content-Type:application/octet-stream" "https://solrcloud.tul-infra.page/solr/admin/collections?action=CREATEALIAS&name=tul_cob-az-$CIRCLE_TAG-prod&collections=tul_cob-az-$CIRCLE_TAG-init")
 validate_status
 echo
