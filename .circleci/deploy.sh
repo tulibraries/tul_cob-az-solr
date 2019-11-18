@@ -37,10 +37,12 @@ echo
 echo "***"
 echo "* Creating prod alias based on configset name."
 echo "***"
+RELEASE_ID=$(curl "https://api.github.com/repos/tulibraries/tul_cob-az-solr/releases/latest" | jq .id)
+
 RESP=$(curl -u $SOLR_USER:$SOLR_PASSWORD -i -o - --silent -X POST --header "Content-Type:application/octet-stream" "https://solrcloud.tul-infra.page/solr/admin/collections?action=CREATEALIAS&name=tul_cob-az-$CIRCLE_TAG-prod&collections=tul_cob-az-$CIRCLE_TAG-init")
 validate_status
 echo
 echo "***"
 echo "* Pushing zip file asset to GitHub release."
 echo "***"
-curl -v -X POST -H "Authorization: token $GITHUB_TOKEN" --data-binary @/home/circleci/solrconfig.zip -H "Content-Type: application/octet-stream" "https://uploads.github.com/repos/tulibraries/tul_cob-az-solr/releases/$CIRCLE_TAG/assets?name=tul_cob-az-$CIRCLE_TAG.zip"
+curl -v -X POST -H "Authorization: token $GITHUB_TOKEN" --data-binary @/home/circleci/solrconfig.zip -H "Content-Type: application/octet-stream" "https://uploads.github.com/repos/tulibraries/tul_cob-az-solr/releases/$RELEASE_ID/assets?name=tul_cob-az-$CIRCLE_TAG.zip"
