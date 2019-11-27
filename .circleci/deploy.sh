@@ -22,7 +22,7 @@ echo
 echo "***"
 echo "* Sending tul_cob-az-$CIRCLE_TAG configs to SolrCloud."
 echo "***"
-RESP=$(curl -u $SOLR_USER:$SOLR_PASSWORD -i -o - --silent -X POST --header "Content-Type:application/octet-stream" --data-binary @/home/circleci/solrconfig "https://solrcloud.tul-infra.page/solr/admin/configs?action=UPLOAD&name=tul_cob-az-$CIRCLE_TAG")
+RESP=$(curl -u $SOLR_USER:$SOLR_PASSWORD -i -o - --silent -X POST --header "Content-Type:application/octet-stream" --data-binary @/home/circleci/solrconfig.zip "https://solrcloud.tul-infra.page/solr/admin/configs?action=UPLOAD&name=tul_cob-az-$CIRCLE_TAG")
 validate_status
 echo
 echo "***"
@@ -53,5 +53,5 @@ echo "***"
 echo "* Pushing zip file asset to GitHub release."
 echo "***"
 RELEASE_ID=$(curl "https://api.github.com/repos/tulibraries/tul_cob-az-solr/releases/latest" | jq .id)
-RESP=$(curl -v -X POST -H "Authorization: token $GITHUB_TOKEN" --data-binary @/home/circleci/solrconfig -H "Content-Type: application/octet-stream" "https://uploads.github.com/repos/tulibraries/tul_cob-az-solr/releases/$RELEASE_ID/assets?name=tul_cob-az-$CIRCLE_TAG.zip")
+RESP=$(curl -v -X POST -H "Authorization: token $GITHUB_TOKEN" --data-binary @/home/circleci/solrconfig.zip -H "Content-Type: application/octet-stream" "https://uploads.github.com/repos/tulibraries/tul_cob-az-solr/releases/$RELEASE_ID/assets?name=tul_cob-az-$CIRCLE_TAG.zip")
 validate_create
