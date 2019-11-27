@@ -11,7 +11,7 @@ validate_status() {
 }
 validate_create() {
   echo "response: $RESP"
-  STATUS=$(echo "$RESP" | grep HTTP | awk '{print $2}')
+  STATUS=$(echo "$RESP")
   if [[  "$STATUS" != "201" ]]; then
     echo "Failing because status was not 201"
     echo "status: $STATUS"
@@ -53,5 +53,5 @@ echo "***"
 echo "* Pushing zip file asset to GitHub release."
 echo "***"
 RELEASE_ID=$(curl "https://api.github.com/repos/tulibraries/tul_cob-az-solr/releases/latest" | jq .id)
-RESP=$(curl -v -X POST -H "Authorization: token $GITHUB_TOKEN" --data-binary @/home/circleci/solrconfig.zip -H "Content-Type: application/octet-stream" "https://uploads.github.com/repos/tulibraries/tul_cob-az-solr/releases/$RELEASE_ID/assets?name=tul_cob-az-$CIRCLE_TAG.zip")
+RESP=$(curl -s -o /dev/null -w "%{http_code}" -X POST -H "Authorization: token $GITHUB_TOKEN" --data-binary @/home/circleci/solrconfig.zip -H "Content-Type: application/octet-stream" "https://uploads.github.com/repos/tulibraries/tul_cob-az-solr/releases/$RELEASE_ID/assets?name=tul_cob-az-$CIRCLE_TAG.zip")
 validate_create
