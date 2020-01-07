@@ -81,7 +81,7 @@
        of SearchComponents (see below) and supports distributed
        queries across multiple shards
     -->
-  <requestHandler name="search" class="solr.SearchHandler" default="true">
+    <requestHandler name="/search" class="solr.SearchHandler" default="true">
     <!-- default values for query parameters can be specified, these
          will be overridden by parameters in the request
       -->
@@ -149,26 +149,7 @@
 
        <!-- NOT using marc_display because it is large and will slow things down for search results -->
        <str name="fl">
-         id,
-         format,
-         database_display,
-         title_t,
-         title_sort,
-         alt_names_t,
-         title_statement_display,
-         title_truncated_display,
-         az_vendor_id_display,
-         az_vendor_name_display,
-         note_display,
-         note_t,
-         availability_facet,
-         electronic_resource_display,
-         record_update_date,
-         subject_display,
-         subject_facet,
-         subject_t,
-         url_finding_aid_display:[json],
-         url_more_links_display:[json],
+         *
          electronic_resource_display:[json]
        </str>
 
@@ -241,12 +222,11 @@
 
 
   <!-- for requests to get a single document; use id=666 instead of q=id:666 -->
-  <requestHandler name="document" class="solr.SearchHandler" >
+  <requestHandler name="/document" class="solr.SearchHandler" >
     <lst name="defaults">
       <str name="echoParams">all</str>
-      <str name="fl">*</str>
+      <str name="fl">* electronic_resource_display:[json]</str>
       <str name="rows">1</str>
-      <str name="q">{!term f=id v=$id}</str> <!-- use id=666 instead of q=id:666 -->
     </lst>
   </requestHandler>
 
