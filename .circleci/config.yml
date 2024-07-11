@@ -40,6 +40,12 @@ jobs:
       - run:
           name: Build the app
           command: make up
+      - run:
+          name: Install Solr Documents
+          command: make load-data
+      - run:
+          name: Run relevancy Tests
+          command: make test
       
   run_deploy:
     docker:
