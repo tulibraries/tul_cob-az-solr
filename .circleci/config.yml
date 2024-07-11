@@ -31,6 +31,11 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "47:44:3f:10:e0:07:49:8b:d3:58:cd:72:2d:de:88:e0"
+      - restore_cache:
+          keys:
+            - gem-cache-v1-{{ arch }}-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+            - gem-cache-v1-{{ arch }}-{{ .Branch }}
+            - gem-cache-v1
       - run:
           name: Install Docker Compose
           command: |
@@ -40,6 +45,10 @@ jobs:
       - run:
           name: Build the app
           command: make up
+      - save_cache:
+          key: gem-cache-v1-{{ arch }}-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
       - run:
           name: Install Solr Documents
           command: make load-data
