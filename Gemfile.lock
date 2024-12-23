@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/tulibraries/cob_az_index.git
-  revision: 525859a93d902028ed07d4cf25eeb717c7baccc1
+  revision: ecccd2895b7ef6ef7bd1bb0ebcf9551b922a0cde
   branch: main
   specs:
     cob_az_index (0.1.0)
@@ -12,7 +12,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (7.2.2)
+    activesupport (7.2.2.1)
       base64
       benchmark (>= 0.3)
       bigdecimal
@@ -32,7 +32,7 @@ GEM
     builder (3.3.0)
     concurrent-ruby (1.3.4)
     connection_pool (2.4.1)
-    csv (3.3.0)
+    csv (3.3.2)
     deprecation (1.1.0)
       activesupport
     diff-lcs (1.5.1)
@@ -81,7 +81,7 @@ GEM
     llhttp-ffi (0.5.0)
       ffi-compiler (~> 1.0)
       rake (~> 13.0)
-    logger (1.6.2)
+    logger (1.6.4)
     marc (1.2.0)
       rexml
       scrub_rb (>= 1.0.1, < 2)
@@ -95,22 +95,22 @@ GEM
       bigdecimal (~> 3.1)
     net-http (0.4.1)
       uri
-    nokogiri (1.17.0-aarch64-linux)
+    nokogiri (1.17.2-aarch64-linux)
       racc (~> 1.4)
-    nokogiri (1.17.0-arm-linux)
+    nokogiri (1.17.2-arm-linux)
       racc (~> 1.4)
-    nokogiri (1.17.0-arm64-darwin)
+    nokogiri (1.17.2-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.17.0-x86-linux)
+    nokogiri (1.17.2-x86-linux)
       racc (~> 1.4)
-    nokogiri (1.17.0-x86_64-darwin)
+    nokogiri (1.17.2-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.17.0-x86_64-linux)
+    nokogiri (1.17.2-x86_64-linux)
       racc (~> 1.4)
     public_suffix (6.0.1)
     racc (1.8.1)
     rake (13.2.1)
-    rexml (3.3.9)
+    rexml (3.4.0)
     rsolr (2.6.0)
       builder (>= 2.1.2)
       faraday (>= 0.9, < 3, != 2.0.0)
@@ -128,7 +128,7 @@ GEM
       rspec-support (~> 3.13.0)
     rspec-support (3.13.1)
     scrub_rb (1.0.1)
-    securerandom (0.4.0)
+    securerandom (0.4.1)
     slop (4.10.1)
     traject (3.8.2)
       concurrent-ruby (>= 0.8.0)
