@@ -21,6 +21,8 @@ services:
       - $PWD:/opt/solr/conf/tul_cob-az-solr
     ports:
       - 8983:8983
+    environment:
+      - SOLR_OPTS=-Dsolr.config.lib.enabled=true
     entrypoint:
       - docker-entrypoint.sh
       - solr-precreate
