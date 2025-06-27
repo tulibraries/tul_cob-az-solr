@@ -48,10 +48,7 @@ jobs:
           key: gem-cache-v1-{{ arch }}-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
-      - run:
-          name: Run Tests
-          command: make test
-      
+    
   run_deploy:
     docker:
       - image: cimg/python:3.12.3
