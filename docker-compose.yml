@@ -6,7 +6,7 @@ services:
       - solr
     tty: true
     volumes:
-      - ${PWD}:/app
+      - .:/app
       - $PWD/bin/load-data:/bin/load-data
     environment:
       SOLR_AZ_URL: "http://solr:8983/solr/blacklight"
