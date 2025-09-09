@@ -23,8 +23,8 @@ workflows:
               only: /.*/
 jobs:
   run_tests:
-    machine:
-      image: ubuntu-2004:current
+    docker:
+      - image: cimg/ruby:3.4-node 
     steps:
       - checkout
       - add_ssh_keys:
@@ -35,12 +35,6 @@ jobs:
             - gem-cache-v1-{{ arch }}-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
             - gem-cache-v1-{{ arch }}-{{ .Branch }}
             - gem-cache-v1
-      - run:
-          name: Install Docker Compose
-          command: |
-            curl -L https://github.com/docker/compose/releases/download/1.24.1/docker-compose-`uname -s`-`uname -m` > ~/docker-compose
-            chmod +x ~/docker-compose
-            sudo mv ~/docker-compose /usr/local/bin/docker-compose
       - run:
           name: Build the app
           command: make up
