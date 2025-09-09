@@ -4,6 +4,7 @@ source "https://rubygems.org"
 
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
+gem "http", "~> 5.2.0"
 gem "rsolr"
 gem "rspec"
 gem "cob_az_index",
