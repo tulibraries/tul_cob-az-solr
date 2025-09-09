@@ -24,7 +24,7 @@ workflows:
 jobs:
   run_tests:
     machine:
-      image: ubuntu-2004:current
+      image: ubuntu-2204:current
     steps:
       - checkout
       - add_ssh_keys:
@@ -41,11 +41,6 @@ jobs:
             curl -L https://github.com/docker/compose/releases/download/1.24.1/docker-compose-`uname -s`-`uname -m` > ~/docker-compose
             chmod +x ~/docker-compose
             sudo mv ~/docker-compose /usr/local/bin/docker-compose
-      - run:
-          name: Install build dependencies
-          command: |
-            sudo apt-get update
-            sudo apt-get install -y build-essential pkg-config libffi-dev
       - run:
           name: Build the app
           command: make up
