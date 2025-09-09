@@ -173,7 +173,6 @@ PLATFORMS
 
 DEPENDENCIES
   cob_az_index!
-  http (~> 5.2.0)
   rsolr
   rspec
 
