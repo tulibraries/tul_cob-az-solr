@@ -26,6 +26,7 @@ jobs:
     docker:
       - image: cimg/ruby:3.4-node 
     steps:
+      - setup_remote_docker
       - checkout
       - add_ssh_keys:
           fingerprints:
