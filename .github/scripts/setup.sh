@@ -8,6 +8,6 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 echo "Installing dependencies..."
 sudo apt-get update
-sudo apt-get install -y jq
+sudo apt-get install -y jq build-essential libffi-dev
 
 echo "Setup complete!"
