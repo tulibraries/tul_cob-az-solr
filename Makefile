@@ -12,4 +12,6 @@ tty-solr:
 ps:
 	$(DOCKER) ps
 zip:
-	bash ./.circleci/build.sh
+	bash ./.github/scripts/build.sh
+zip-gh:
+	bash ./.github/scripts/build.sh

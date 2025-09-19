@@ -1,0 +1,28 @@
+name: Test
+
+on:
+  push:
+    branches-ignore:
+      - main
+  workflow_dispatch: {}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Docker Compose and dependencies
+      run: bash .github/scripts/setup.sh
+    
+    - name: Build and start services
+      run: make up
+    
+    - name: Run tests
+      run: bash .github/scripts/test.sh
+    
+    - name: Clean up
+      if: always()
+      run: make down
