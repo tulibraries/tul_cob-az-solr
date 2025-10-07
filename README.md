@@ -1,5 +1,5 @@
 # TUL COB AZ Databases Content Solr Configurations
-[![CircleCI](https://circleci.com/gh/tulibraries/tul_cob-az-solr.svg?style=svg)](https://circleci.com/gh/tulibraries/tul_cob-az-solr)
+[![CI](https://github.com/tulibraries/tul_cob-az-solr/actions/workflows/test.yml/badge.svg)](https://github.com/tulibraries/tul_cob-az-solr/actions/workflows/test.yml)
 
 These are the Solr configuration files for the TUL Cob (LibrarySearch) databases content search & faceting Solr collection.
 
