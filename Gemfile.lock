@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/tulibraries/cob_az_index.git
-  revision: 0aef7c2e8e31979128d38a24d0bd063c3f20b348
+  revision: d80d64c918d5b8f02fa70ae7fd3fde79208336bd
   branch: main
   specs:
     cob_az_index (0.1.0)
@@ -77,7 +77,7 @@ GEM
       mutex_m
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
-    json (2.15.2)
+    json (2.16.0)
     jsonpath (1.1.5)
       multi_json
     llhttp-ffi (0.5.1)
@@ -91,7 +91,7 @@ GEM
       marc (~> 1.0)
     mini_mime (1.1.5)
     mini_portile2 (2.8.9)
-    minitest (5.26.0)
+    minitest (5.26.1)
     multi_json (1.17.0)
     multi_xml (0.7.2)
       bigdecimal (~> 3.1)
@@ -161,7 +161,7 @@ GEM
       traject (~> 3.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    uri (1.1.0)
+    uri (1.1.1)
     yell (2.2.2)
 
 PLATFORMS
