@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/tulibraries/cob_az_index.git
-  revision: d80d64c918d5b8f02fa70ae7fd3fde79208336bd
+  revision: 7253a0d4fcb1f4c537c379b7ea4d2d5f25806ad6
   branch: main
   specs:
     cob_az_index (0.1.0)
@@ -91,7 +91,7 @@ GEM
       marc (~> 1.0)
     mini_mime (1.1.5)
     mini_portile2 (2.8.9)
-    minitest (5.26.1)
+    minitest (5.26.2)
     multi_json (1.17.0)
     multi_xml (0.7.2)
       bigdecimal (~> 3.1)
