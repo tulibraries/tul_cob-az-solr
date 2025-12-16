@@ -6,6 +6,8 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
 gem "rsolr"
 gem "rspec"
+gem "rubocop", "~> 1.81.7"
+
 gem "cob_az_index",
   git: "https://github.com/tulibraries/cob_az_index.git",
   branch: "main"
