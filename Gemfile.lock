@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/tulibraries/cob_az_index.git
-  revision: 669859de06e53b680cb9577276d4c6eed05dbbca
+  revision: cc1d7736cd6b167225178484174337449ca1c88f
   branch: main
   specs:
     cob_az_index (0.1.0)
@@ -25,7 +25,7 @@ GEM
       securerandom (>= 0.3)
       tzinfo (~> 2.0, >= 2.0.5)
       uri (>= 0.13.1)
-    addressable (2.8.8)
+    addressable (2.8.9)
       public_suffix (>= 2.0.2, < 8.0)
     ast (2.4.3)
     base64 (0.3.0)
@@ -101,7 +101,8 @@ GEM
       json-schema (>= 4.1)
     mini_mime (1.1.5)
     mini_portile2 (2.8.9)
-    minitest (6.0.1)
+    minitest (6.0.2)
+      drb (~> 2.0)
       prism (~> 1.5)
     multi_json (1.19.1)
     multi_xml (0.8.1)
@@ -134,7 +135,7 @@ GEM
       ast (~> 2.4.1)
       racc
     prism (1.9.0)
-    public_suffix (7.0.2)
+    public_suffix (7.0.5)
     racc (1.8.1)
     rainbow (3.1.1)
     rake (13.3.1)
