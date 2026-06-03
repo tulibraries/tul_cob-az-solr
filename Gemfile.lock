@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/tulibraries/cob_az_index.git
-  revision: d444f1bbde9dbe54a94edbe47ebc276d32c9711f
+  revision: a94740293127a8275433db2911e5400f050de791
   branch: main
   specs:
     cob_az_index (0.1.0)
@@ -80,7 +80,7 @@ GEM
       mutex_m
     i18n (1.14.8)
       concurrent-ruby (~> 1.0)
-    json (2.19.5)
+    json (2.19.8)
     jsonpath (1.1.5)
       multi_json
     language_server-protocol (3.17.0.5)
