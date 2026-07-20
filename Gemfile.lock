@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/tulibraries/cob_az_index.git
-  revision: 499663c24fb8f99ce7b763365ae9743e2cbf00ef
+  revision: 12df81d5e14c99738ce2e35d02ee0d2f8f884b7a
   branch: main
   specs:
     cob_az_index (0.1.0)
@@ -31,7 +31,7 @@ GEM
     base64 (0.3.0)
     bigdecimal (4.1.2)
     builder (3.3.0)
-    concurrent-ruby (1.3.7)
+    concurrent-ruby (1.3.8)
     connection_pool (3.0.2)
     csv (3.3.5)
     deprecation (1.1.0)
