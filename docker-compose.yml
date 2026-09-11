@@ -1,6 +1,6 @@
 services:
   app:
-    image: cimg/ruby:3.4.0
+    image: cimg/ruby:4.0.5
     working_dir: /app
     depends_on:
       - solr
